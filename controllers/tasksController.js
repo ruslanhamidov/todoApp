@@ -28,3 +28,10 @@ export const deleteTask = async (req, res) => {
 
   res.json({message: "Task was deleted successfully"})
 }
+
+export const getTask = async (req, res) => {
+  const id = req.params.id
+  const task = await Task.findOne({ id })
+
+  res.json({task})
+}
